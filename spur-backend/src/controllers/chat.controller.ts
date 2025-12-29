@@ -88,7 +88,7 @@ export class ChatController {
     }
   }
 
-  async healthCheck(req: Request, res: Response) {
+  async healthCheck(_req: Request, res: Response) {
     try {
       const health = await chatService.getHealth();
       

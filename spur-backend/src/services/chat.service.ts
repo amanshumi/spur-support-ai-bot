@@ -40,6 +40,8 @@ export class ChatService {
         },
       });
 
+      logger.info(`Saved user message ${userMessage.id} for conversation ${conversation.id}`);
+
       // Get conversation history for context
       const history = await this.getConversationHistory(conversation.id);
 
@@ -151,7 +153,7 @@ export class ChatService {
       try {
         conversation.metadata = JSON.parse(conversation.metadata);
       } catch {
-        conversation.metadata = {};
+        conversation.metadata = '{}';
       }
     }
 

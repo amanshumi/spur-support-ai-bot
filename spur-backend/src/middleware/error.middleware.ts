@@ -7,7 +7,7 @@ export function errorMiddleware(
   error: Error,
   req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ) {
   logger.error('Unhandled error:', {
     error: error.message,
